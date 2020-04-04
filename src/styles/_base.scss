@@ -1,0 +1,25 @@
+// Colors
+$main-color: #352c4e;
+$text-color: #e8e8e8;
+
+// Fonts
+$main-text-font: "Roboto Mono", sans-serif;
+
+html,
+body,
+:global(#root) {
+  height: 100%;
+}
+
+body {
+  font-family: $main-text-font;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $text-color;
+}
+
+.background {
+  min-height: 100%;
+  height: 100%;
+  background-color: $main-color;
+}
