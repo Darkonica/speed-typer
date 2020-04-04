@@ -38,6 +38,7 @@ module.exports = {
     alias: {
       styles: path.resolve(__dirname, "src/styles/"),
       components: path.resolve(__dirname, "src/components/"),
+      screens: path.resolve(__dirname, "src/screens"),
     },
   },
   plugins: [
