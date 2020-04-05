@@ -1,23 +1,20 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { ScoreIndicator } from "components/ScoreIndicator";
 import { Timer } from "components/Timer";
-import { EASY_MODE_WORDS } from "./constants";
+import { getNewText } from "./helpers";
 import styles from "./styles";
 
-const getNewText = () =>
-  EASY_MODE_WORDS[parseInt(Math.random() * EASY_MODE_WORDS.length)];
-
-function GameScreen() {
+function GameScreen({ onGameOver }) {
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(5);
   const [currentText, setCurrentText] = useState(getNewText());
   const [inputText, setInputText] = useState("");
 
   const handleTimer = useCallback(
     (timer) => {
       if (timeLeft === 0) {
-        console.log("!Game Over");
         clearInterval(timer);
+        onGameOver();
       } else {
         setTimeLeft((prevTime) => prevTime - 1);
       }
@@ -46,6 +43,7 @@ function GameScreen() {
           if (updatedText === currentText) {
             setScore((prevScore) => prevScore + 1);
             setCurrentText(getNewText());
+            setTimeLeft(5);
             return "";
           }
 
