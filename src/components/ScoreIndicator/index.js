@@ -1,0 +1,1 @@
+export ScoreIndicator from "./ScoreIndicator";

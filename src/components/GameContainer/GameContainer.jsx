@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { StartScreen } from "screens/StartScreen";
+import { StartScreen, GameScreen } from "screens";
+import styles from "./styles";
 
 function GameContainer() {
-  const [isGameStarted, setGameStart] = useState(false);
+  // const [isGameStarted, setGameStart] = useState(false);
+  const isGameStarted = true;
 
   return (
-    <div>
-      {!isGameStarted && <StartScreen onStart={() => setGameStart(true)} />}
-      {isGameStarted && <div>Oh, there will be a game itself soon</div>}
+    <div className={styles.gameContainer}>
+      {/* {!isGameStarted && <StartScreen onStart={() => setGameStart(true)} />} */}
+      {isGameStarted && <GameScreen />}
     </div>
   );
 }
