@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { StartScreen, GameScreen, GameOverScreen } from "screens";
-import styles from "./styles";
+import React, { useState } from 'react';
+import { StartScreen, GameScreen, GameOverScreen } from 'screens';
+import styles from './styles';
 
 function GameContainer() {
   const [isGameStarted, setGameStart] = useState(false);

@@ -1,1 +1,1 @@
-export GameOverScreen from "./GameOverScreen";
+export { default as GameOverScreen } from './GameOverScreen';

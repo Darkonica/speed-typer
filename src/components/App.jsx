@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import Header from "components/UI/Header";
-import GameContainer from "components/GameContainer";
-import styles from "styles/styles.scss";
+import React from 'react';
+import Header from 'components/UI/Header';
+import { GameContainer } from 'components/GameContainer';
+import styles from 'styles/styles';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className={styles.background}>
-        <Header />
-        <GameContainer />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className={styles.background}>
+      <Header />
+      <GameContainer />
+    </div>
+  );
 }
+
+export default App;

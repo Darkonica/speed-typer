@@ -1,1 +1,1 @@
-export StartScreen from "./StartScreen";
+export { default as StartScreen } from './StartScreen';

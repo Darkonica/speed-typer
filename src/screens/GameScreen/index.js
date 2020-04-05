@@ -1,1 +1,1 @@
-export GameScreen from "./GameScreen";
+export { default as GameScreen } from './GameScreen';

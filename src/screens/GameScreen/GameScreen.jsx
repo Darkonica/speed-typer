@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { ScoreIndicator } from "components/ScoreIndicator";
-import { Timer } from "components/Timer";
-import { getNewText } from "./helpers";
-import styles from "./styles";
+import React, { useEffect, useState, useCallback } from 'react';
+import { ScoreIndicator } from 'components/ScoreIndicator';
+import { Timer } from 'components/Timer';
+import { getNewText } from './helpers';
+import styles from './styles';
 
 function GameScreen({ onGameOver }) {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(5);
   const [currentText, setCurrentText] = useState(getNewText());
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState('');
 
   const handleTimer = useCallback(
     (timer) => {
@@ -26,7 +26,7 @@ function GameScreen({ onGameOver }) {
     (event) => {
       const enteredKey = event.key;
 
-      if (enteredKey === "Backspace") {
+      if (enteredKey === 'Backspace') {
         setInputText((prevText) => prevText.slice(0, prevText.length - 1));
       }
 
@@ -34,7 +34,7 @@ function GameScreen({ onGameOver }) {
         setInputText((prevText) => {
           const updatedText = prevText + enteredKey;
 
-          console.log("!updatedText, currentText", updatedText, currentText);
+          console.log('!updatedText, currentText', updatedText, currentText);
 
           if (updatedText.length > currentText.length) {
             return prevText;
@@ -44,7 +44,7 @@ function GameScreen({ onGameOver }) {
             setScore((prevScore) => prevScore + 1);
             setCurrentText(getNewText());
             setTimeLeft(5);
-            return "";
+            return '';
           }
 
           return updatedText;
@@ -56,10 +56,10 @@ function GameScreen({ onGameOver }) {
 
   // Type listener
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyPress);
+    document.addEventListener('keydown', handleKeyPress);
 
     return () => {
-      document.removeEventListener("keydown", handleKeyPress);
+      document.removeEventListener('keydown', handleKeyPress);
     };
   }, [handleKeyPress]);
 

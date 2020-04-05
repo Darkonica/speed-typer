@@ -1,1 +1,1 @@
-export ScoreIndicator from "./ScoreIndicator";
+export { default as ScoreIndicator } from './ScoreIndicator';
