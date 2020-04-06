@@ -34,8 +34,6 @@ function GameScreen({ onGameOver }) {
         setInputText((prevText) => {
           const updatedText = prevText + enteredKey;
 
-          console.log('!updatedText, currentText', updatedText, currentText);
-
           if (updatedText.length > currentText.length) {
             return prevText;
           }

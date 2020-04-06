@@ -32,5 +32,9 @@ module.exports = {
       },
     ],
     'react/jsx-filename-extension': 'off',
+    'react/prop-types': 'off',
+    radix: 'off',
+    semi: 'error',
+    'no-console': 'warn',
   },
 };
