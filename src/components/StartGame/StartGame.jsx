@@ -1,17 +1,17 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from 'react';
 
 function StartGame({ onStart }) {
-  const isKeyF = useCallback((event) => {
-    if (event.key.toLowerCase() === "f") {
+  const isKeyF = useCallback(event => {
+    if (event.key.toLowerCase() === 'f') {
       onStart();
     }
   });
 
   useEffect(() => {
-    document.addEventListener("keydown", isKeyF);
+    document.addEventListener('keydown', isKeyF);
 
     return () => {
-      document.removeEventListener("keydown", isKeyF);
+      document.removeEventListener('keydown', isKeyF);
     };
   }, []);
 

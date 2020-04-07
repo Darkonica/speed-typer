@@ -13,7 +13,7 @@ function GameScreen() {
     setGameOver(false);
   };
 
-  const handleGameOver = (score) => {
+  const handleGameOver = score => {
     setFinalScore(score);
     setGameStart(false);
     setGameOver(true);

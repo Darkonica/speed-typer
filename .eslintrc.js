@@ -36,5 +36,7 @@ module.exports = {
     radix: 'off',
     semi: 'error',
     'no-console': 'warn',
+    // 'arrow-parens': 'warn',
+    'arrow-parens': ['warn', 'as-needed'],
   },
 };

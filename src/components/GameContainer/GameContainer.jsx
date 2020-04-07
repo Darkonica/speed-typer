@@ -11,27 +11,27 @@ function GameContainer({ onGameOver }) {
   const [inputText, setInputText] = useState('');
 
   const handleTimer = useCallback(
-    (timer) => {
+    timer => {
       if (timeLeft === 0) {
         clearInterval(timer);
         onGameOver(score);
       } else {
-        setTimeLeft((prevTime) => prevTime - 1);
+        setTimeLeft(prevTime => prevTime - 1);
       }
     },
     [timeLeft]
   );
 
   const handleKeyPress = useCallback(
-    (event) => {
+    event => {
       const enteredKey = event.key;
 
       if (enteredKey === 'Backspace') {
-        setInputText((prevText) => prevText.slice(0, prevText.length - 1));
+        setInputText(prevText => prevText.slice(0, prevText.length - 1));
       }
 
       if (/^[\w\d\s]{1}$/.test(enteredKey)) {
-        setInputText((prevText) => {
+        setInputText(prevText => {
           const updatedText = prevText + enteredKey;
 
           if (updatedText.length > currentText.length) {
@@ -39,7 +39,7 @@ function GameContainer({ onGameOver }) {
           }
 
           if (updatedText === currentText) {
-            setScore((prevScore) => prevScore + 1);
+            setScore(prevScore => prevScore + 1);
             setCurrentText(getNewText());
             setTimeLeft(5);
             return '';
