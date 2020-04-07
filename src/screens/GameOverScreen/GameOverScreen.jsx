@@ -2,11 +2,14 @@ import React from 'react';
 import { StartGame } from 'components/StartGame';
 import styles from './styles';
 
-const GameOverScreen = ({ onStart }) => {
+const GameOverScreen = ({ onStart, finalScore }) => {
   return (
     <div className={styles.gameOverScreen}>
-      <div>Game Over</div>
-      <StartGame onStart={onStart} />
+      <div className={styles.title}>Game Over</div>
+      <div className={styles.finalScore}>your final score: {finalScore}</div>
+      <div className={styles.startGame}>
+        <StartGame onStart={onStart} />
+      </div>
     </div>
   );
 };

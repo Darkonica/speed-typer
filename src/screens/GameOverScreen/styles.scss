@@ -1,4 +1,18 @@
 .gameOverScreen {
-  font-size: 48px;
   text-align: center;
+
+  .title {
+    font-size: 72px;
+    text-transform: uppercase;
+  }
+
+  .finalScore {
+    font-size: 24px;
+    margin-top: 18px;
+  }
+
+  .startGame {
+    font-size: 36px;
+    margin-top: 48px;
+  }
 }
