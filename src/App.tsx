@@ -1,10 +1,10 @@
 import Header from 'components/UI/Header';
 import { GameScreen } from 'screens';
-import styles from 'styles/styles';
+import 'styles/styles.scss';
 
 function App() {
   return (
-    <div className={styles.background}>
+    <div className=".background">
       <Header />
       <GameScreen />
     </div>
