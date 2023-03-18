@@ -1,4 +1,3 @@
-import React from 'react';
 import { StartGame } from 'components/StartGame';
 import styles from './styles';
 
