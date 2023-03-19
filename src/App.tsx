@@ -1,4 +1,4 @@
-import Header from './components/UI/Header';
+import { Header } from './components/UI/Header';
 import { GameScreen } from './screens';
 import './styles/styles.scss';
 
