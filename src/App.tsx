@@ -1,6 +1,6 @@
-import Header from 'components/UI/Header';
-import { GameScreen } from 'screens';
-import 'styles/styles.scss';
+import Header from './components/UI/Header';
+import { GameScreen } from './screens';
+import './styles/styles.scss?inline';
 
 function App() {
   return (

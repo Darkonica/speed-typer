@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { ScoreIndicator } from 'components/ScoreIndicator';
-import { Timer } from 'components/Timer';
+import { useEffect, useState, useCallback } from 'react';
+import { ScoreIndicator } from '../ScoreIndicator';
+import { Timer } from '../Timer';
 import { getNewText } from './helpers';
-import styles from './styles';
+import styles from './styles.scss?inline';
 
 function GameContainer({ onGameOver }) {
   const [score, setScore] = useState(0);
