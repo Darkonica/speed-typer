@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import ScoreIndicator from './ScoreIndicator';
 import { render } from '@testing-library/react';

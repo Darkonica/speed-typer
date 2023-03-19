@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
 
-export function Header() {
+export const Header = () => {
   return <div className={styles.headerContainer}>[Speed Typer]</div>;
 }
