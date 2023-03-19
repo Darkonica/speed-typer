@@ -1,5 +1,5 @@
-import { StartGame } from "components/StartGame";
-import styles from "./styles";
+import { StartGame } from "../../components/StartGame";
+import styles from "./styles.scss?inline";
 
 function StartScreen({ onStart }) {
   return (
