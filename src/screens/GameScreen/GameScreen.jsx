@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { StartScreen, GameOverScreen } from '../';
 import { GameContainer } from '../../components/GameContainer';
-import styles from './styles.scss?inline';
+import styles from './styles.module.scss';
 
 function GameScreen() {
   const [finalScore, setFinalScore] = useState(0);

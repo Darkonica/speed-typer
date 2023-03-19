@@ -1,5 +1,5 @@
 import { StartGame } from '../../components/StartGame';
-import styles from './styles.scss?inline';
+import styles from './styles.module.scss';
 
 const GameOverScreen = ({ onStart, finalScore }) => {
   return (

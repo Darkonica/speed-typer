@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { ScoreIndicator } from '../ScoreIndicator';
 import { Timer } from '../Timer';
 import { getNewText } from './helpers';
-import styles from './styles.scss?inline';
+import styles from './styles.module.scss';
 
 function GameContainer({ onGameOver }) {
   const [score, setScore] = useState(0);
