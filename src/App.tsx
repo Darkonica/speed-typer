@@ -1,8 +1,8 @@
-import { Header } from './components/UI/Header';
+import { Header } from './components/UI';
 import { GameScreen } from './screens';
 import './styles/styles.scss';
 
-function App() {
+export const App = () => {
   return (
     <div className="background">
       <Header />
@@ -10,5 +10,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
