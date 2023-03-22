@@ -3,8 +3,8 @@ import { StartScreen, GameOverScreen } from '../';
 import { GameContainer } from '../../components/GameContainer';
 import styles from './styles.module.scss';
 
-function GameScreen() {
-  const [finalScore, setFinalScore] = useState(0);
+export const GameScreen = () => {
+  const [finalScore, setFinalScore] = useState<number>(0);
   const [isGameStarted, setGameStart] = useState(false);
   const [isGameOver, setGameOver] = useState(false);
 
@@ -13,7 +13,7 @@ function GameScreen() {
     setGameOver(false);
   };
 
-  const handleGameOver = score => {
+  const handleGameOver = (score: number) => {
     setFinalScore(score);
     setGameStart(false);
     setGameOver(true);
@@ -31,5 +31,3 @@ function GameScreen() {
     </div>
   );
 }
-
-export default GameScreen;
