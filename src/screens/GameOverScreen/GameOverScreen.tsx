@@ -1,7 +1,12 @@
 import { StartGame } from '../../components/StartGame';
 import styles from './styles.module.scss';
 
-const GameOverScreen = ({ onStart, finalScore }) => {
+interface Props {
+  onStart: () => void,
+  finalScore: number
+}
+
+export const GameOverScreen = ({ onStart, finalScore }: Props) => {
   return (
     <div className={styles.gameOverScreen}>
       <div className={styles.title}>Game Over</div>
@@ -12,5 +17,3 @@ const GameOverScreen = ({ onStart, finalScore }) => {
     </div>
   );
 };
-
-export default GameOverScreen;
