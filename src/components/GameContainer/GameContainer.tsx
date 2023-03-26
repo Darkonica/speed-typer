@@ -63,7 +63,7 @@ export const GameContainer = ({ onGameOver }: Props) => {
     const timerID = setInterval(handleTimer, 1000);
 
     return () => clearInterval(timerID);
-  }, []);
+  }, [timeLeft]);
 
   return (
     <div className={styles.gameContainer}>
