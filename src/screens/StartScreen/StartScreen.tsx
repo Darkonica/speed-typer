@@ -1,8 +1,8 @@
-import { StartGame } from "../../components/StartGame";
-import styles from "./styles.module.scss";
+import { StartGame } from '../../components/StartGame';
+import styles from './styles.module.scss';
 
 interface Props {
-  onStart: () => void,
+  onStart: () => void;
 }
 
 export const StartScreen = ({ onStart }: Props) => {
@@ -11,4 +11,4 @@ export const StartScreen = ({ onStart }: Props) => {
       <StartGame onStart={onStart} />
     </div>
   );
-}
+};
