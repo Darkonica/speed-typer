@@ -2,8 +2,8 @@ import { StartGame } from '../../components/StartGame';
 import styles from './styles.module.scss';
 
 interface Props {
-  onStart: () => void,
-  finalScore: number
+  onStart: () => void;
+  finalScore: number;
 }
 
 export const GameOverScreen = ({ onStart, finalScore }: Props) => {

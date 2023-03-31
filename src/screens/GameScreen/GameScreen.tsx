@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { StartScreen, GameOverScreen } from '../';
+import { StartScreen } from '../StartScreen';
+import { GameOverScreen } from '../GameOverScreen';
 import { GameContainer } from '../../components/GameContainer';
 import styles from './styles.module.scss';
 
@@ -27,7 +28,9 @@ export const GameScreen = () => {
           {isGameStarted && <GameContainer onGameOver={handleGameOver} />}
         </>
       )}
-      {isGameOver && <GameOverScreen onStart={handleGameStart} finalScore={finalScore} />}
+      {isGameOver && (
+        <GameOverScreen onStart={handleGameStart} finalScore={finalScore} />
+      )}
     </div>
   );
-}
+};

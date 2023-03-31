@@ -5,7 +5,7 @@ import { getNewText } from './helpers';
 import styles from './styles.module.scss';
 
 interface Props {
-  onGameOver: (score: number) => void,
+  onGameOver: (score: number) => void;
 }
 
 export const GameContainer = ({ onGameOver }: Props) => {
@@ -18,7 +18,7 @@ export const GameContainer = ({ onGameOver }: Props) => {
     if (timeLeft === 0) {
       onGameOver(score);
     } else {
-      setTimeLeft(prevTime => prevTime - 1);
+      setTimeLeft((prevTime) => prevTime - 1);
     }
   };
 
@@ -26,11 +26,11 @@ export const GameContainer = ({ onGameOver }: Props) => {
     const enteredKey = event.key;
 
     if (enteredKey === 'Backspace') {
-      setInputText(prevText => prevText.slice(0, prevText.length - 1));
+      setInputText((prevText) => prevText.slice(0, prevText.length - 1));
     }
 
     if (/^[\w\d\s]{1}$/.test(enteredKey)) {
-      setInputText(prevText => {
+      setInputText((prevText) => {
         const updatedText = prevText + enteredKey;
 
         if (updatedText.length > currentText.length) {
@@ -38,7 +38,7 @@ export const GameContainer = ({ onGameOver }: Props) => {
         }
 
         if (updatedText === currentText) {
-          setScore(prevScore => prevScore + 1);
+          setScore((prevScore) => prevScore + 1);
           setCurrentText(getNewText());
           setTimeLeft(5);
           return '';
@@ -63,7 +63,7 @@ export const GameContainer = ({ onGameOver }: Props) => {
     const timerID = setInterval(handleTimer, 1000);
 
     return () => clearInterval(timerID);
-  }, [timeLeft]);
+  }, [timeLeft, handleTimer]);
 
   return (
     <div className={styles.gameContainer}>
@@ -81,4 +81,4 @@ export const GameContainer = ({ onGameOver }: Props) => {
       </div>
     </div>
   );
-}
+};
