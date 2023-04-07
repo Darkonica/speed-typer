@@ -15,7 +15,7 @@ export const GameContainer = ({ onGameOver }: Props) => {
   const [inputText, setInputText] = useState('');
 
   const handleTimer = useCallback(() => {
-    if (timeLeft === 0) {
+    if (timeLeft === 1) {
       onGameOver(score);
     } else {
       setTimeLeft((prevTime) => prevTime - 1);
