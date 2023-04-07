@@ -14,40 +14,43 @@ export const GameContainer = ({ onGameOver }: Props) => {
   const [currentText, setCurrentText] = useState(getNewText());
   const [inputText, setInputText] = useState('');
 
-  const handleTimer = () => {
+  const handleTimer = useCallback(() => {
     if (timeLeft === 0) {
       onGameOver(score);
     } else {
       setTimeLeft((prevTime) => prevTime - 1);
     }
-  };
+  }, [onGameOver, score, timeLeft]);
 
-  const handleKeyPress = (event: KeyboardEvent) => {
-    const enteredKey = event.key;
+  const handleKeyPress = useCallback(
+    (event: KeyboardEvent) => {
+      const enteredKey = event.key;
 
-    if (enteredKey === 'Backspace') {
-      setInputText((prevText) => prevText.slice(0, prevText.length - 1));
-    }
+      if (enteredKey === 'Backspace') {
+        setInputText((prevText) => prevText.slice(0, prevText.length - 1));
+      }
 
-    if (/^[\w\d\s]{1}$/.test(enteredKey)) {
-      setInputText((prevText) => {
-        const updatedText = prevText + enteredKey;
+      if (/^[\w\d\s]{1}$/.test(enteredKey)) {
+        setInputText((prevText) => {
+          const updatedText = prevText + enteredKey;
 
-        if (updatedText.length > currentText.length) {
-          return prevText;
-        }
+          if (updatedText.length > currentText.length) {
+            return prevText;
+          }
 
-        if (updatedText === currentText) {
-          setScore((prevScore) => prevScore + 1);
-          setCurrentText(getNewText());
-          setTimeLeft(5);
-          return '';
-        }
+          if (updatedText === currentText) {
+            setScore((prevScore) => prevScore + 1);
+            setCurrentText(getNewText());
+            setTimeLeft(5);
+            return '';
+          }
 
-        return updatedText;
-      });
-    }
-  };
+          return updatedText;
+        });
+      }
+    },
+    [currentText]
+  );
 
   // Type listener
   useEffect(() => {
